@@ -10,6 +10,7 @@ namespace SkillsTracker.Controllers
     [Route("/skills")]
     public class SkillsController : Controller
     {
+        // GET: /skills
         [HttpGet]
         public IActionResult Index()
         {
@@ -24,7 +25,8 @@ namespace SkillsTracker.Controllers
             return Content(html, "text/html");
         }
 
-        [HttpGet("/skills/form/")]
+        // GET: /skills/form
+        [HttpGet("form")]
         public IActionResult Form()
         {
             string html =
@@ -54,7 +56,8 @@ namespace SkillsTracker.Controllers
             return Content(html, "text/html");
         }
 
-        [HttpPost("/skills/form")]
+        // POST: /skills/form
+        [HttpPost("form")]
         public IActionResult FilledForm(string date, string cSharp, string javaScript, string python)
         {
             string html =
